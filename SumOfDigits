@@ -1,0 +1,30 @@
+import java.util.*;
+import java.io.*;
+class SumOfDigit
+{
+    //function definition
+    public static int findSumOfDigits(int num)
+    {
+        int result=0;
+        //1.Base case condition
+        if(num==0)
+        {
+            return 0;
+        }
+        else
+        {
+            //2.Recursive fuction call
+            result=(num%10)+findSumOfDigits(num/10);
+        }
+        return result;
+    }
+    public static void main(String [] args)
+    {
+        Scanner sc=new Scanner(System.in);
+        System.out.println("Enter any nubmer..");
+        int num=sc.nextInt();
+        //function call
+        int result=findSumOfDigits(num);
+        System.out.println("Sum of digits of given number is "+result);
+    }
+}
