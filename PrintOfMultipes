@@ -1,0 +1,29 @@
+import java.util.*;
+import javax.print.attribute.standard.PrinterLocation;
+class printMultiples
+{
+    //Function definition
+    public static void printMult(int n, int k)
+    {
+        //1.Base case condition
+        if(k==1)
+        {
+            System.out.println(n);
+            return;
+        }
+        //2.Recusive function call
+        else
+        {
+            printMult(n,k-1);
+            System.out.println(n*k);
+        }
+    }
+    public static void main(String [] args)
+    {
+        int n=24;
+        int k=5;
+        printMult(n,k);
+        System.out.println();
+        
+    }
+}
