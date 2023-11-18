@@ -1,0 +1,38 @@
+import java.util.*;
+import java.io.*;
+class binarySearch
+{
+    //Function definition
+    public static int findBinarySearch(int arr[],int low,int high,int x)
+    { 
+        int result=-1;
+        while(low<=high)
+        {
+            int mid=low+(high-low)/2;
+            if(arr[mid]==x)
+            {
+                return mid;
+            }
+            else if(arr[mid]<x)
+            {
+                //traverse towards right side of on array
+                return findBinarySearch(arr,mid+1,high,x);
+            }
+            else
+            {
+                //traverse towards left side of on array
+                return findBinarySearch(arr,low,mid-1,x);
+            }
+        }
+        return result;
+    }
+    public static void main(String args [])
+    {
+        int arr[]={2,4,6,10,15,27,34,39,45,56};
+        int low=0;
+        int high=arr.length-1;
+        int x=15;
+        int result=findBinarySearch(arr,low,high,x);
+        System.out.println("The array element is at position "+result);
+    }
+}
